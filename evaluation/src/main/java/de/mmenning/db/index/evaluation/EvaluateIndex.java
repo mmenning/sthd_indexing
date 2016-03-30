@@ -27,24 +27,18 @@ public class EvaluateIndex {
 
    public static final String SEPARATOR = "\t";
 
-   public static Writer getDestination(String dest) throws IOException {
+   public static EvaluationWriter getDestination(String dest) throws
+         IOException {
       File f = new File(dest);
       File parentDir = f.getParentFile();
 
       if (parentDir != null) {
          parentDir.mkdirs();
       }
-      return Files.newBufferedWriter(f.toPath(), Charset.forName("UTF-8"));
-   }
+      final Writer writer = Files.newBufferedWriter(f.toPath(), Charset.forName
+            ("UTF-8"));
 
-   /**
-    * @param args args[0] EvaluationSetup.xml, args[1] Index.xml, args[2]
-    *             destination of evaluation data
-    */
-   public static void main(String[] args) throws IOException {
-      final Writer writer = getDestination(args[2]);
-
-      EvaluationWriter dest = new EvaluationWriter() {
+      EvaluationWriter evaluationWriter = new EvaluationWriter() {
          @Override
          public void write(int dim, int blockSize, int bufferSize, int test,
                            int indexSize, double buildUp, double
@@ -70,8 +64,15 @@ public class EvaluateIndex {
             }
          }
       };
+      return evaluationWriter;
+   }
 
-      new EvaluateIndex().evaluate(args[0], args[1], dest);
+   /**
+    * @param args args[0] EvaluationSetup.xml, args[1] Index.xml, args[2]
+    *             destination of evaluation data
+    */
+   public static void main(String[] args) throws IOException {
+      new EvaluateIndex().evaluate(args[0], args[1], getDestination(args[2]));
    }
 
    public interface EvaluationWriter {
