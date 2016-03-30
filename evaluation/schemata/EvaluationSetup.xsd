@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.mmenning.de/db/index/evaluation/xml/setup"
+        xmlns:evalSetup="http://www.mmenning.de/db/index/evaluation/xml/setup"
+        elementFormDefault="qualified">
+
+    <complexType name="EvaluationSetup">
+        <sequence>
+            <element name="evalFunction" type="evalSetup:Function"
+                     maxOccurs="1" minOccurs="1">
+            </element>
+            <element name="dim" type="int" maxOccurs="unbounded"
+                     minOccurs="1">
+            </element>
+            <element name="bufferSize" type="int" maxOccurs="unbounded"
+                     minOccurs="1">
+            </element>
+            <element name="blockSize" type="int" maxOccurs="unbounded"
+                     minOccurs="1">
+            </element>
+            <element name="initialSize" type="int" minOccurs="1"
+                     maxOccurs="1">
+            </element>
+            <element name="incSize" type="int" minOccurs="1"
+                     maxOccurs="unbounded">
+            </element>
+            <element name="startPercentage" type="double" maxOccurs="1"
+                     minOccurs="1">
+            </element>
+            <element name="updatePercentage" type="double" maxOccurs="1"
+                     minOccurs="1">
+            </element>
+            <element name="endPercentage" type="double" maxOccurs="1"
+                     minOccurs="1">
+            </element>
+            <element name="queries" type="int" maxOccurs="1" minOccurs="1">
+            </element>
+            <element name="tests" type="int" maxOccurs="1" minOccurs="1">
+            </element>
+            <element name="spatialDistribution" type="evalSetup:Distribution"
+                     maxOccurs="1" minOccurs="1">
+            </element>
+            <element name="maxSpatialElementSize" type="double"
+                     maxOccurs="1" minOccurs="1">
+            </element>
+            <element name="validTimeDistribution" type="evalSetup:Distribution"
+                     maxOccurs="1" minOccurs="1">
+            </element>
+            <element name="maxValidTimeLength" type="double" maxOccurs="1"
+                     minOccurs="1">
+            </element>
+            <element name="vtInfinityProbability" type="double"
+                     maxOccurs="1" minOccurs="1">
+            </element>
+            <element name="queryDistribution" type="evalSetup:Distribution"
+                     maxOccurs="1" minOccurs="1">
+            </element>
+            <element name="querySize" type="double" maxOccurs="1"
+                     minOccurs="1">
+            </element>
+            <element name="randomSeed" type="long" maxOccurs="1"
+                     minOccurs="1">
+            </element>
+        </sequence>
+    </complexType>
+
+    <element name="setup" type="evalSetup:EvaluationSetup"></element>
+
+    <complexType name="Distribution" abstract="true"></complexType>
+
+    <complexType name="Uniform">
+        <complexContent>
+            <extension base="evalSetup:Distribution"></extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="Cluster">
+        <complexContent>
+            <extension base="evalSetup:Distribution">
+                <sequence>
+                    <element name="stDev" type="double" maxOccurs="1"
+                             minOccurs="1">
+                    </element>
+                    <element name="mean" type="double" maxOccurs="1"
+                             minOccurs="1"></element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="Skewed">
+        <complexContent>
+            <extension base="evalSetup:Distribution">
+                <sequence>
+                    <element name="stDev" type="double" maxOccurs="1"
+                             minOccurs="1">
+                    </element>
+                    <element name="mean" type="double" maxOccurs="1"
+                             minOccurs="1"></element>
+                    <element name="skew" type="double" maxOccurs="1"
+                             minOccurs="1"></element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <simpleType name="Function">
+        <restriction base="string">
+            <enumeration value="io"></enumeration>
+            <enumeration value="user-time"></enumeration>
+        </restriction>
+    </simpleType>
+</schema>

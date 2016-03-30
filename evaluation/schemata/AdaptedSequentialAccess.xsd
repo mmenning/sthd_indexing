@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.mmenning.de/db/index/sequential"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:sequential="http://www.mmenning.de/db/index/sequential">
+
+	<complexType name="AdaptedSequentialAccess">
+	</complexType>
+
+	<element name="access" type="sequential:AdaptedSequentialAccess"></element>
+</schema>

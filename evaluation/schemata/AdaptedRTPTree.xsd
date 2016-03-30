@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.mmenning.de/db/index/rtptree"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:rtptree="http://www.mmenning.de/db/index/rtptree">
+
+
+	<complexType name="AdaptedRTPTree">
+		<sequence>
+			<element name="medianTT" type="rtptree:Median" maxOccurs="1"
+				minOccurs="1">
+			</element>
+
+			<element name="medianVT" type="rtptree:Median" maxOccurs="1"
+				minOccurs="1">
+			</element>
+
+			<element name="median" type="rtptree:Median" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="nodeSize_D" type="int" maxOccurs="1"
+				minOccurs="0">
+			</element>
+		</sequence>
+	</complexType>
+
+	<element name="index" type="rtptree:AdaptedRTPTree"></element>
+
+	<complexType name="Median">
+		<sequence></sequence>
+		<attribute name="min" type="double" use="required"></attribute>
+		<attribute name="max" type="double" use="required"></attribute>
+	</complexType>
+</schema>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<index:index xmlns:index="http://www.mmenning.de/db/index/evaluation/xml/index"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mmenning.de/db/index/evaluation/xml/index ../../schemata/IndexBase.xsd ">
+	<index:index>evalXMLs/rtptree/uniformRTPTree.xml</index:index>
+	<index:factoryGen>de.mmenning.db.index.rtptree.AbstractRTPTreeFactory</index:factoryGen>
+</index:index>

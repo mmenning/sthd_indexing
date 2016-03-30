@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rtptree:index xmlns:rtptree="http://www.mmenning.de/db/index/rtptree"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.mmenning.de/db/index/rtptree ../../schemata/AdaptedRTPTree.xsd ">
+    <!-- unoptimized median-->
+    <rtptree:medianTT max="0.5" min="0.5" />
+    <rtptree:medianVT max="0.5" min="0.5" />
+    <rtptree:median max="0.5" min="0.5" />
+</rtptree:index>

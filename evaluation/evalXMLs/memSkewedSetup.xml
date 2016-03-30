@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evalSetup:setup xmlns:evalSetup="http://www.mmenning.de/db/index/evaluation/xml/setup"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mmenning.de/db/index/evaluation/xml/setup ../schemata/EvaluationSetup.xsd ">
+	<evalSetup:evalFunction>user-time</evalSetup:evalFunction>
+	<evalSetup:dim>5</evalSetup:dim>
+	<evalSetup:dim>10</evalSetup:dim>
+	<evalSetup:dim>15</evalSetup:dim>
+	<evalSetup:dim>20</evalSetup:dim>
+	<evalSetup:dim>30</evalSetup:dim>
+	<evalSetup:dim>40</evalSetup:dim>	
+  	<evalSetup:dim>50</evalSetup:dim>
+	<evalSetup:bufferSize>0</evalSetup:bufferSize>
+	<evalSetup:blockSize>4096</evalSetup:blockSize>
+	<evalSetup:initialSize>1000</evalSetup:initialSize>
+	<evalSetup:incSize>11000</evalSetup:incSize>
+	<evalSetup:incSize>11000</evalSetup:incSize>
+	<evalSetup:incSize>11000</evalSetup:incSize>
+	<evalSetup:incSize>11000</evalSetup:incSize>
+	<evalSetup:incSize>11000</evalSetup:incSize>
+	<evalSetup:incSize>11000</evalSetup:incSize>
+	<evalSetup:incSize>11000</evalSetup:incSize>
+	<evalSetup:incSize>11000</evalSetup:incSize>
+	<evalSetup:incSize>11000</evalSetup:incSize>
+	<evalSetup:incSize>11000</evalSetup:incSize>
+	<evalSetup:startPercentage>0.1</evalSetup:startPercentage>
+	<evalSetup:updatePercentage>0.8</evalSetup:updatePercentage>
+	<evalSetup:endPercentage>0.1</evalSetup:endPercentage>
+	<evalSetup:queries>1000</evalSetup:queries>
+	<evalSetup:tests>100</evalSetup:tests>
+    <evalSetup:spatialDistribution xsi:type="evalSetup:Skewed">
+        <evalSetup:stDev>0.3</evalSetup:stDev>
+        <evalSetup:mean>0.25</evalSetup:mean>
+        <evalSetup:skew>-1.0</evalSetup:skew>
+    </evalSetup:spatialDistribution>
+	<evalSetup:maxSpatialElementSize>0.05</evalSetup:maxSpatialElementSize>
+    <evalSetup:validTimeDistribution xsi:type="evalSetup:Skewed">
+        <evalSetup:stDev>0.3</evalSetup:stDev>
+        <evalSetup:mean>0.25</evalSetup:mean>
+        <evalSetup:skew>-1.0</evalSetup:skew>
+    </evalSetup:validTimeDistribution>
+	<evalSetup:maxValidTimeLength>0.05</evalSetup:maxValidTimeLength>
+	<evalSetup:vtInfinityProbability>0.1</evalSetup:vtInfinityProbability>
+	<evalSetup:queryDistribution xsi:type="evalSetup:Uniform" />
+	<evalSetup:querySize>0.1</evalSetup:querySize>
+	<evalSetup:randomSeed>0</evalSetup:randomSeed>
+</evalSetup:setup>

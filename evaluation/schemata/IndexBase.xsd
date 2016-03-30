@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.mmenning.de/db/index/evaluation/xml/index"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:index="http://www.mmenning.de/db/index/evaluation/xml/index">
+
+    <complexType name="IndexBase">
+    	<sequence> 
+       	<element name="index" type="string" maxOccurs="1" minOccurs="1"></element>
+		<element name="factoryGen" type="string" maxOccurs="1" minOccurs="1"></element>
+		</sequence>
+    </complexType>
+
+    <element name="index" type="index:IndexBase"></element>
+</schema>

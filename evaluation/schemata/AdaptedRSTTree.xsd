@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.mmenning.de/db/index/rsttree"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:rsttree="http://www.mmenning.de/db/index/rsttree">
+
+	<complexType name="AdaptedRSTTree">
+		<attribute name="alpha" type="double" use="required"></attribute>
+		<attribute name="alphaW" type="double" use="required"></attribute>
+		<attribute name="maxK" type="int" use="optional"></attribute>
+	</complexType>
+
+	<element name="tree" type="rsttree:AdaptedRSTTree"></element>
+</schema>
